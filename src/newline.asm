@@ -10,6 +10,8 @@ newline:
 
     ; TODO:
     ; imprimir '\n'
+    mov al, 0x0A        ; codigo ASCII de '\n'
+    call print_char
 
     mov esp, ebp
     pop ebp
