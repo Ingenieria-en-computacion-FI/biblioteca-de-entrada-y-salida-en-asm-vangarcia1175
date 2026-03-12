@@ -17,6 +17,7 @@ print_char:
 
     ; TODO:
     ; 1. Guardar el caracter en memoria
+    push eax
     mov [buffer_char], al
 
     ; 2. Usar syscall write
@@ -30,6 +31,7 @@ print_char:
     mov edx, 1                  ; longitud = 1 byte
     int 0x80
 
+    pop eax
     mov esp, ebp
     pop ebp
     ret
