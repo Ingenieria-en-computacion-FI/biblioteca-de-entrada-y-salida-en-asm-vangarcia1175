@@ -8,7 +8,7 @@ PASS=0
 TOTAL=3
 
 # Test 1: print_int
-OUTPUT=$(printf "42\nA\nhola\n" | ./program | tr -d '\0')
+OUTPUT=$(printf "42\nA\nhola\n" | ./program)
 if echo "$OUTPUT" | grep -q "42"; then
     echo "Test 1 (print_int / scan_int) OK"
     PASS=$((PASS+1))
@@ -17,7 +17,7 @@ else
 fi
 
 # Test 2: print_char / scan_char
-OUTPUT=$(printf "42\nA\nhola\n" | ./program | tr -d '\0')
+OUTPUT=$(printf "42\nA\nhola\n" | ./program)
 if echo "$OUTPUT" | grep -q "A"; then
     echo "Test 2 (print_char / scan_char) OK"
     PASS=$((PASS+1))
@@ -26,7 +26,7 @@ else
 fi
 
 # Test 3: print_string / scan_string
-OUTPUT=$(printf "42\nA\nhola\n" | ./program | tr -d '\0')
+OUTPUT=$(printf "42\nA\nhola\n" | ./program)
 if echo "$OUTPUT" | grep -q "hola"; then
     echo "Test 3 (string) OK"
     PASS=$((PASS+1))
